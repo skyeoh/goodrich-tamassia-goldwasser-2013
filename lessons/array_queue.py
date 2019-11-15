@@ -39,6 +39,8 @@ class ArrayQueue:
         self._data[self._front] = None                            # help garbage collection
         self._front = (self._front + 1) % len(self._data)
         self._size -= 1
+        if 0 < self._size < len(self._data) // 4:
+            self._resize(len(self._data) // 2)
         return answer
 
     def enqueue(self, e):
@@ -97,3 +99,15 @@ if __name__ == "__main__":
     print(len(Q))
     print(", ".join([str(Q.dequeue()) for i in range(len(Q))]))
     print(len(Q))
+
+    print(len(Q._data))
+    for i in range(1, 12):
+        Q.enqueue(2*i)
+    print(len(Q))
+    print(len(Q._data))
+    print(", ".join([str(Q.dequeue()) for i in range(8)]))
+    print(len(Q))
+    print(len(Q._data))
+    print(", ".join([str(Q.dequeue()) for i in range(3)]))
+    print(len(Q))
+    print(len(Q._data))
