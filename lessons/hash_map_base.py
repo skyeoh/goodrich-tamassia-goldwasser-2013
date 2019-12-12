@@ -1,5 +1,6 @@
 # Goodrich, Tamassia, Goldwasser (2013) Code Fragment 10.4 on page 423
 from map_base import MapBase
+from random import randrange
 
 class HashMapBase(MapBase):
     """Abstract base class for map using hash-table with MAD compression."""
