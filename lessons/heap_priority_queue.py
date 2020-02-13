@@ -91,3 +91,4 @@ class HeapPriorityQueue(PriorityQueueBase): # base class defines _Item
         return (item._key, item._value)
 
 if __name__ == "__main__":
+    pass
